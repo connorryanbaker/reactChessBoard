@@ -6,10 +6,14 @@ class PojoBoard {
   makeGrid() {
     const arr = [];
     for (let i = 0; i < 8; i++) {
-      if (i === 0 || i === 7) {
-        arr.push(["R","N","B","Q","K","B","N","R"]);
-      } else if (i === 1 || i === 6) {
-        arr.push(["P","P","P","P","P","P","P","P"]);
+      if (i === 0) {
+        arr.push(["BR","BN","BB","BQ","BK","BB","BN","BR"]);
+      } else if (i === 7) {
+        arr.push(["WR", "WN", "WB", "WQ", "WK", "WB", "WN", "WR"]);
+      } else if (i === 1) {
+        arr.push(["BP","BP","BP","BP","BP","BP","BP","BP"]);
+      } else if (i === 6) {
+        arr.push(["WP", "WP", "WP", "WP", "WP", "WP", "WP", "WP"]);
       } else {
         arr.push([" ", " ", " "," "," "," "," "," "])
       }

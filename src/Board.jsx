@@ -71,7 +71,7 @@ class Square extends React.Component {
 
   render() {
     const selected = this.state.selected ? "selected" : "";
-    const piece = this.props.piece !== " " ? "king" : ""
+    const piece = this.pieceClass();
     return (
       <li className={`${this.props.klass} square ${selected} ${piece}`}
         onClick={this.handleClick}></li>
@@ -79,6 +79,48 @@ class Square extends React.Component {
   }
 
   pieceClass() {
-    
+    let pc;
+    switch(this.props.piece) {
+      case "BR":
+        pc = "black-rook";
+        break;
+      case "BN":
+        pc = "black-knight";
+        break;
+      case "BB":
+        pc = "black-bishop";
+        break;
+      case "BQ":
+        pc = "black-queen";
+        break;
+      case "BK":
+        pc = "black-king";
+        break;
+      case "BP":
+        pc = "black-pawn";
+        break;
+      case "WR":
+        pc = "white-rook";
+        break;
+      case "WN":
+        pc = "white-knight";
+        break;
+      case "WB":
+        pc = "white-bishop";
+        break;
+      case "WQ":
+        pc = "white-queen";
+        break;
+      case "WK":
+        pc = "white-king";
+        break;
+      case "WP":
+        pc = "white-pawn";
+        break;
+      default:
+        pc = "";
+        break;
+    }
+    return pc;
   }
 }
