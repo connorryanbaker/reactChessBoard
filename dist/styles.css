@@ -23,3 +23,10 @@
 .selected {
   background-color: red;
 }
+
+.king {
+  background-image: url("imgs/wk.png");
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: center;
+}

@@ -71,9 +71,14 @@ class Square extends React.Component {
 
   render() {
     const selected = this.state.selected ? "selected" : "";
+    const piece = this.props.piece !== " " ? "king" : ""
     return (
-      <li className={`${this.props.klass} square ${selected}`}
-          onClick={this.handleClick}>{this.props.piece}</li>
+      <li className={`${this.props.klass} square ${selected} ${piece}`}
+        onClick={this.handleClick}></li>
     )
+  }
+
+  pieceClass() {
+    
   }
 }
