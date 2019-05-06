@@ -50,6 +50,9 @@ class Square extends React.Component {
       selected: false
     }
     this.handleClick = this.handleClick.bind(this);
+    this.mouseOver = this.mouseOver.bind(this);
+    this.mouseUp = this.mouseUp.bind(this);
+    this.mouseDown = this.mouseDown.bind(this);
   }
 
   handleClick() {
@@ -59,6 +62,18 @@ class Square extends React.Component {
         selected: !this.state.selected,
       });
     }
+  }
+  
+  mouseDown() {
+    console.log("im down");
+  }
+
+  mouseOver() {
+    console.log(this.props.pos);
+  }
+
+  mouseUp() {
+    console.log("im up");
   }
 
   componentDidUpdate(prevProps) {
@@ -73,8 +88,15 @@ class Square extends React.Component {
     const selected = this.state.selected ? "selected" : "";
     const piece = this.pieceClass();
     return (
-      <li className={`${this.props.klass} square ${selected} ${piece}`}
-        onClick={this.handleClick}></li>
+      <li className={`${this.props.klass} square ${selected}`}
+          onClick={this.handleClick}>
+          <span className={`${piece} bg-img`}
+                draggable
+                onMouseOver={this.mouseOver}
+                onMouseUp={this.mouseUp}
+                onMouseDown={this.mouseDown}>
+          </span>
+          </li>
     )
   }
 
