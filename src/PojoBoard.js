@@ -18,8 +18,12 @@ class PojoBoard {
   }
 
   move(start,dest) {
-    this.grid[dest[0]][dest[1]] = this.grid[start[0]][start[1]];
-    this.grid[start[0]][start[1]] = " ";
+    if (start[0] === dest[0] && start[1] === dest[1]) {
+      return;
+    } else {
+      this.grid[dest[0]][dest[1]] = this.grid[start[0]][start[1]];
+      this.grid[start[0]][start[1]] = " ";
+    }
   }
 }
 
