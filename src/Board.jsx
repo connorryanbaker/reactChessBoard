@@ -19,6 +19,27 @@ export class Board extends React.Component {
   }
 }
 
-const Square = (props) => (
-  <li className={`${props.klass} square`}></li>
-);
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: false
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState({
+      selected: !this.state.selected
+    });
+  }
+
+  render() {
+    const selected = this.state.selected ? "selected" : "";
+    return (
+      <li className={`${this.props.klass} square ${selected}`}
+          onClick={this.handleClick}></li>
+    )
+  }
+
+}

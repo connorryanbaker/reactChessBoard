@@ -11,10 +11,15 @@
 .square {
   width: 50px;
   height: 50px;
+  transition: 500ms ease;
 }
 .lightSquare {
   background-color: #bff88b;
 }
 .darkSquare {
   background-color: #93baff;
+}
+
+.selected {
+  background-color: red;
 }
